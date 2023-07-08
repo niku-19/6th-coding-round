@@ -38,7 +38,8 @@ const resturantReducer = (state, { type, payload }) => {
                 {
                   rating: parseInt(rating),
                   comment: comment,
-                  name: "User",
+                  pp: "https://picsum.photos/200/300",
+                  revName: "User" + 1,
                 },
               ],
             }

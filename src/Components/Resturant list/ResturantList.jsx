@@ -10,7 +10,7 @@ const ResturantList = () => {
           {resturants?.resturantData?.map((eachResturant) => {
             return (
               <div key={eachResturant.id}>
-                <h1>{eachResturant?.name}</h1>
+                <h1 className="resturant__name">{eachResturant?.name}</h1>
                 <DishCard resturantData={eachResturant} />
               </div>
             );

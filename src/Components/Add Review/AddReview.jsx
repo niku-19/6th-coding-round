@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import styles from "./AddReview.module.css";
+import { GiTireIronCross } from "react-icons/gi";
 import { useResturantContext } from "../../Context/ResturantContext";
 import { useParams } from "react-router-dom";
+
+import styles from "./AddReview.module.css";
 
 const AddReview = ({ closeAddReview }) => {
   const { id } = useParams();
@@ -34,6 +36,10 @@ const AddReview = ({ closeAddReview }) => {
         onClick={() => closeAddReview()}
       ></div>
       <div className={styles.model__container}>
+        <GiTireIronCross
+          className={styles.close__icons}
+          onClick={() => closeAddReview()}
+        />
         <h1>Add Review</h1>
         <form
           className={styles.form__container}
@@ -62,19 +68,19 @@ const AddReview = ({ closeAddReview }) => {
           </div>
           <div className={styles.form__group}>
             <label htmlFor="">Comment</label>
-            <textarea
+            <input
+              type="text"
               name="comment"
               id="comment"
-              cols="30"
-              rows="10"
               placeholder="Comment"
+              className={styles.form__input}
               onChange={(e) =>
                 setRating({
                   ...rating,
                   comment: e.target.value,
                 })
               }
-            ></textarea>
+            ></input>
           </div>
           <button className={styles.submit__btn}>Submit</button>
         </form>
